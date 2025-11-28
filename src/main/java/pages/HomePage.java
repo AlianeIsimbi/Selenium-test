@@ -7,6 +7,7 @@ public class HomePage {
     private WebDriver driver;
     private By loginLink = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a");
     private By HoverItems = By.className("col-sm-4");
+    private By contactLink = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(9) > a");
 
         public HomePage(WebDriver driver) {
             this.driver = driver;
@@ -20,6 +21,11 @@ public class HomePage {
         public HoverEvent hoverEvents(){
             driver.findElement(HoverItems);
             return new HoverEvent(driver);
+        }
+
+        public UploadFile moveToContactUsPage(){
+            driver.findElement(contactLink).click();
+            return new UploadFile(driver);
         }
 
 }

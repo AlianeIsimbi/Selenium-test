@@ -8,7 +8,7 @@ import pages.HomePage;
 
 public class BaseTests {
 
-        private WebDriver driver;
+        protected WebDriver driver;
         protected HomePage homePage;
         @BeforeMethod
         public void setUp(){
@@ -20,7 +20,7 @@ public class BaseTests {
 
         @AfterMethod
         public void close(){
-            driver.close();
+            driver.quit();
         }
 
 
